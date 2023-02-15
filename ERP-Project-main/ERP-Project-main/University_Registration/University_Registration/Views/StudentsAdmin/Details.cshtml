@@ -1,0 +1,115 @@
+﻿@model University_Registration.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NationalNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationalNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonalIdFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonalIdFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CertificateFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CertificateFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Major.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Major.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Student_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

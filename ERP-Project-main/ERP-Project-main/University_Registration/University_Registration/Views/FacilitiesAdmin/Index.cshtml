@@ -1,0 +1,62 @@
+﻿@model IEnumerable<University_Registration.Models.Facility>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+
+<div style="padding-left: 3%; margin-top: 3%;">
+    <div style="width:8rem;">
+        @Html.ActionLink("Create New", "Create", null, null, new { @class = "flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" })
+
+    </div>
+</div>
+
+
+
+<div style="width:95%;margin-left:auto;margin-right:auto;margin-top:1%">
+
+    <table class="w-full whitespace-no-wrap ">
+        <thead>
+            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                <th class="px-4 py-3">@Html.DisplayNameFor(model => model.Name)</th>
+                <th class="px-4 py-3">@Html.DisplayNameFor(model => model.Description)</th>
+                <th class="px-4 py-3">
+                    @Html.DisplayNameFor(model => model.Facility_Image)
+                </th>
+                <th class="px-4 py-3"></th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+
+            @foreach (var item in Model)
+            {
+
+                <tr class="text-gray-700 dark:text-gray-400">
+                    <td class="px-4 py-3 text-sm">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="px-4 py-3 text-sm">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td class="px-4 py-3 text-sm">
+                        @Html.DisplayFor(modelItem => item.Facility_Image)
+                    </td>
+                    <td class="px-4 py-3 text-sm">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Facility_ID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Facility_ID }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Facility_ID }, new { @class = "btn btn-danger" })
+
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+
+
+</div>
+
+

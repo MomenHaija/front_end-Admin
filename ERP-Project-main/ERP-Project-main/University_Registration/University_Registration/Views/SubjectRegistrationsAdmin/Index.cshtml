@@ -1,0 +1,58 @@
+﻿@model IEnumerable<University_Registration.Models.SubjectRegistration>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section.SectionDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section.SectionDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SubjectRegistrations_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SubjectRegistrations_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SubjectRegistrations_ID })
+        </td>
+    </tr>
+}
+
+</table>
